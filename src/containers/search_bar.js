@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {fetchWeather} from '../actions/index';
 
 export default class SearchBar extends Component{
 
@@ -11,13 +14,18 @@ export default class SearchBar extends Component{
     }
 
     onInputChange(event){
-        // console.log(event.target.value);
         this.setState({term: event.target.value});
+    }
+
+    onFormSubmit(event){
+        event.preventDefault();
+
+
     }
 
     render(){
         return(
-            <form className="input-group">
+            <form onSubmit={this.onFormSubmit} className="input-group">
                 <input 
                     placeholder="Forecast weather around the world"
                     className="form-control"
@@ -28,6 +36,6 @@ export default class SearchBar extends Component{
                     <button type="submit" className="btn btn-secondary">Search</button>
                 </span>
             </form>
-        )
+        );
     }
 }
