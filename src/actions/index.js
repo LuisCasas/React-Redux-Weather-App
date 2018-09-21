@@ -1,9 +1,7 @@
 import axios from 'axios';
+import {API_KEY} from '../../config/config';
 
-// to be changed to appropriate react export import
-const config = require('../../config/config');
-
-const API_KEY = config.api.API_KEY;
+// console.log(API_KEY); 
 
 const ROOT_URL = `https://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 
