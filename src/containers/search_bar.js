@@ -21,6 +21,11 @@ class SearchBar extends Component{
     onFormSubmit(event){
         event.preventDefault();
 
+        // if term is empty, don't call the API
+        if(!this.state.term){
+            return;
+        }
+
         // fetch data
         this.props.fetchWeather(this.state.term);
         this.setState({term: ''});
