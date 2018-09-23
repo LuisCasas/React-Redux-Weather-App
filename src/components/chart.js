@@ -3,6 +3,8 @@ import {Sparklines, SparklinesLine, SparklinesReferenceLine} from 'react-sparkli
 import _ from 'lodash';
 
 export default (props) => {
+    // console.log(props.data);
+
     return(
         <div>
         <Sparklines height={120} width={180} data={props.data}>
@@ -15,5 +17,10 @@ export default (props) => {
 }
 
 function average(data){
-    return _.round(_.sum(data)/data.length);
+    // console.log(data);
+    // return data;
+    if(!data)
+    {return;}
+
+   return _.round(_.sum(data)/data.length);
 }
