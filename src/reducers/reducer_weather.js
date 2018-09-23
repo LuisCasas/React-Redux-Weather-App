@@ -1,11 +1,11 @@
-import {FETCHWEAHTER} from '../actions/index';
+import {FETCH_WEATHER} from '../actions/index';
 
 export default function(state = [], action){
 
     switch(action.type){
-    case FETCHWEAHTER: 
+    case FETCH_WEATHER: 
         // return state.concat([action.payload.date]);
-        return [action.payload.date, ...state];
+        return [action.payload.data, ...state];
     }
 
     return state;
